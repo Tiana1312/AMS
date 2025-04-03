@@ -2,7 +2,7 @@ Project name:
 ABUAD Management System
 
 Description:
-This project is a simple AMS management API built with Express and Typescript which allow users to implement the CRUD operations. This project will use backend tools which will include Node.js, Express.js and Typescript. Users can register and access their tasks. Each task has a StaffId, name, department, and a jobDescription. The API allows users to perform full CRUD operations on tasks. This project was created to help me learn, practice and have a better experience working with TypeScript and building RESTful APIs.
+This project is a simple AMS management API built with Express and Typescript which allow users to create an end point to check the health status of the app and this will return days, hours and minutes. This project will use backend tools which will include Node.js, Express.js and Typescript. This project was created to help me learn, practice and have a better experience working with TypeScript and building RESTful APIs.
 
 Installation
 steps to install and set up the project
@@ -30,9 +30,6 @@ git commit -m "Initial commit"
 
 Usage
 To test API using Postman
-
-Features
-create, read, update, and delete tasks 
 
 Acknowledements
 Node.js
