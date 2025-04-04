@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-const healthCheckService = require("../services/healthCheckServices");
+import { calculateUptime } from "../services/healthCheckServices";
 
-exports.getHealthStatus = (req: 
-    Request, res: Response) => {
-        const uptimeData = 
-    healthCheckService.calculateUptime();
-        res.json(uptimeData);
+function getHealthStatus(req: Request, res: Response){
+    const uptimeData = calculateUptime();
+    res.json(uptimeData);
 };
+
+export { getHealthStatus }

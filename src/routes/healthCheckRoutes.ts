@@ -1,8 +1,8 @@
-//this defines the healthcheck route and connect it to the controller
-const express = require("express")
+import express from "express";
+import { getHealthStatus } from "../controllers/healthCheckController";
+
 const router = express.Router();
-const healthCheckController = require("../controllers/healthCheckController");
 
-router.get("/", healthCheckController.getHealthStatus);
+router.get("/", getHealthStatus);
 
-module.exports = router;
+export { router }
