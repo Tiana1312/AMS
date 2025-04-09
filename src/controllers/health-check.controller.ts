@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { calculateUptime } from "../services/healthCheckServices";
+import { calculateUptime } from "@/services";
 
 function getHealthStatus(req: Request, res: Response){
     const uptimeData = calculateUptime();

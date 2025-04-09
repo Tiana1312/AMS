@@ -4,8 +4,8 @@ function calculateUptime() {
     const hours = Math.floor((uptimeMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((uptimeMs % (1000 * 60 * 60)) / (1000 * 60));
     return {
-        uptime: `${days} day(s), ${hours} hr(s), ${minutes} min(s)`,
+        uptime: `${days} day(s), ${hours} hour(s), ${minutes} minute(s)`,
     };
 };
 
-export { calculateUptime }
+export { calculateUptime } 
