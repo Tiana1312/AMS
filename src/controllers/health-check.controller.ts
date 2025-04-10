@@ -1,14 +1,15 @@
 import { Request, Response } from "express";
 import { HealthCheckService } from "@/services";
 
-const healthService = new HealthCheckService();
+export class HealthCheckController {
+    private healthService: HealthCheckService;
 
-export class healthCheckController {
+    constructor() {
+        this.healthService = new HealthCheckService();
+    }
     
-    healthController() {
-    const getHealthCheck = (req: Request, res: Response) => {
-    const uptimeData = healthService.calculateUptime();
-    res.json(uptimeData);
+    getHealthCheck(req: Request, res: Response) {
+        const uptimeData = this.healthService.calculateUptime();
+        res.send(uptimeData);
     } 
-}
 };

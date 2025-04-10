@@ -1,9 +1,10 @@
 import express from "express";
-import { healthCheckController } from "@/controllers";
+import { HealthCheckController } from "@/controllers";
 
-const controller = new healthCheckController
+const controller = new HealthCheckController()
+
 const router = express.Router();
 
-router.get("/", controller.healthController);
+router.get("/health-check", (req, res) => controller.getHealthCheck(req, res));
 
 export { router }

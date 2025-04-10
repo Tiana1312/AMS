@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 7000;
 
 app.use(express.json()); 
-app.use('/healthCheck', router);
+app.use("/", router);
 
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
