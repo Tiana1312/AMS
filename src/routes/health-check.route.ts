@@ -1,8 +1,8 @@
 import express from "express";
-import { getHealthStatus } from "@/controllers";
+import { getHealthCheck } from "@/controllers";
 
 const router = express.Router();
 
-router.get("/", getHealthStatus);
+router.get("/", getHealthCheck);
 
 export { router }
