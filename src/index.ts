@@ -1,12 +1,21 @@
+import 'module-alias/register';
+import "reflect-metadata";
 import express from 'express';
 import { router } from "@/routes";
+import config from "@/config"
+import { AppDataSource } from '@/database/data-source';
 
 const app = express();
-const PORT = process.env.PORT || 7000;
+
+AppDataSource.initialize()
+  .then(() => {
+  })
+  .catch((error) => console.log(error))
 
 app.use(express.json()); 
 app.use("/", router);
 
-app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+app.listen(config.app.PORT, () => {
+  console.log(`Server is running at ${config.app.HOST_NAME}:${config.app.PORT}`);
 });
+
