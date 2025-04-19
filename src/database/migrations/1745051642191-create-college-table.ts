@@ -6,12 +6,11 @@ implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`CREATE TABLE "college" (
-            "id" SERIAL NOT NULL, 
-            "name" character varying NOT NULL, 
-            "uniform" character varying NOT NULL, 
-            "provost" character varying NOT NULL, 
-            "year" integer NOT NULL, 
-            CONSTRAINT "PK_ebef1972362002203cdf7a22e0c" PRIMARY KEY ("id")
+            "id" SERIAL PRIMARY KEY, 
+            "name" VARCHAR(255) NOT NULL, 
+            "uniform" VARCHAR(255), 
+            "provost" VARCHAR(255), 
+            "year" INTEGER, 
             )
             `);
     }
