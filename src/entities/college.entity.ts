@@ -6,14 +6,12 @@ import {
   UpdateDateColumn, 
   DeleteDateColumn, } from "typeorm";
 
-import { v4 as uuidv4 } from 'uuid';
-
 @Entity()
 export class College {
   @PrimaryGeneratedColumn("uuid")
   id!: string;
 
-  @Column({ type: "varchar", length: 50, nullable: false })
+  @Column({ type: "varchar", nullable: false })
   name!: string;
 
   @Column({ type: "varchar", nullable: true })
@@ -25,14 +23,14 @@ export class College {
   @Column({ type: "text", nullable: true })
   description?: string;
 
-  @CreateDateColumn()
-  created_at!: Date;
+  @CreateDateColumn({name: "created_at"})
+  createdAt!: Date;
 
-  @UpdateDateColumn()
-  updated_at!: Date;
+  @UpdateDateColumn({name: "updated_at"})
+  updatedAt!: Date;
 
-  @DeleteDateColumn()
-  deleted_at!: Date;
+  @DeleteDateColumn({name: "deleted_at"})
+  deletedAt!: Date;
 }
 
 

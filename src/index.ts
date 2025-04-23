@@ -6,7 +6,7 @@ import config from "@/config"
 import { AppDataSource } from '@/database/data-source';
 
 const app = express();
-
+ 
 AppDataSource.initialize()
   .then(() => {
   })
