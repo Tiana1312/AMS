@@ -12,7 +12,6 @@ AppDataSource.initialize()
   })
   .catch((error) => console.log(error))
 
-app.use(express.json()); 
 app.use("/", router);
 
 app.listen(config.app.PORT, () => {

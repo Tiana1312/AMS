@@ -4,7 +4,6 @@ import config from "../config";
 
 dotenv.config();
 
-console.log('DB_PASSWORD:', process.env.DB_PASSWORD); // Add this
 export const AppDataSource = new DataSource({
     type: config.db.type,
     host: config.db.host,
@@ -16,7 +15,7 @@ export const AppDataSource = new DataSource({
     logging: true,
     entities: config.app.isDev
         ? ["src/**/*.entity.ts"]
-        : ["dist/**/*.entity.js"],
+        : ["dist/**/*.entity.js"],   
     subscribers: [],
     migrations: config.app.isDev
     ? ["src/database/migrations/*.ts"]
